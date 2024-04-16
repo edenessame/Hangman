@@ -10,16 +10,12 @@ def get_name():
 
 def generate_word():
     """
-    Randomly select a word to use from a list 
-    """
-    word = random.choice(random_words)
-    print(word)
-    return word.upper()
-
-def hide_word():
-    """
+    Randomly select a word to use from the word list 
     Hide the word so it can't be seen
     """
+    word = random.choice(random_words)
+    hidden_word = '_' * len(word)
+    print(hidden_word)
 
 def is_input_valid():
     """
