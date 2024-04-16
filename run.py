@@ -5,7 +5,8 @@ def get_name():
     """
     Asks user for their name to display
     """
-    pass
+    name = input("What's your name?\n")
+    print(f"Hi! {name}! Let's play hangman!\n") 
 
 def generate_word():
     """
@@ -17,7 +18,6 @@ def hide_word():
     """
     Hide the word so it can't be seen
     """
-    pass
 
 def is_input_valid():
     """
@@ -46,3 +46,5 @@ def main():
     calls all the main functions
     """
     pass
+
+get_name()
