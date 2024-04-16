@@ -27,5 +27,7 @@ Connect your GitHub repository and deploy as normal.
 
 The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
------
-Happy coding!
+
+## Credits
+
+* Random words from [espressoenglish.net](https://www.espressoenglish.net/the-100-most-common-words-in-english/)
