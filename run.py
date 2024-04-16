@@ -12,7 +12,9 @@ def generate_word():
     """
     Randomly select a word to use from a list 
     """
-    pass
+    word = random.choice(random_words)
+    print(word)
+    return word.upper()
 
 def hide_word():
     """
@@ -48,3 +50,4 @@ def main():
     pass
 
 get_name()
+generate_word()
