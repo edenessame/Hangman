@@ -27,6 +27,13 @@ Connect your GitHub repository and deploy as normal.
 
 The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
+## Testing
+
+* I commented out the code that hid the word so I could see what the word was to make sure the correct response was recieved. If the letter was in the word the message said that it was and what the letter entered was and if the letter wasn't in the word the message said it wasn't and what the letter entered was, but it didn't recognise capitals.
+
+## Bugs
+
+
 
 ## Credits
 

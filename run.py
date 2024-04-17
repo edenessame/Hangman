@@ -14,9 +14,12 @@ def generate_word():
     Hide the word so it can't be seen
     """
     word = random.choice(random_words)
-    hidden_word = '_' * len(word)
-    print(hidden_word)
-    return(hidden_word)
+    #hidden_word = '_' * len(word)
+    print("The word is:\n")
+    #print(hidden_word)
+    #return(hidden_word)
+    print(word)
+    return(word)
 
 def is_input_valid():
     """
