@@ -19,7 +19,7 @@ def generate_word():
     #print(hidden_word)
     #return(hidden_word)
     print(word)
-    return(word)
+    return word.upper()
 
 def is_input_valid():
     """
@@ -41,7 +41,7 @@ def play_game(word):
     game_over = False
 
     while not game_over and lives > 0:
-        guess = input("Please guess a letter or word: ")
+        guess = input("Please guess a letter or word: ").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print(f"You already guessed: {guess}!")
@@ -56,11 +56,11 @@ def play_game(word):
             if guess in guessed_words:
                 print(f"You already guessed: {guess}!")
             elif guess != word:
-                print(f"Sorry! {guess} is not the word!") 
+                print(f"Sorry! {guess} is not the word!")
                 lives -= 1
                 guessed_words.append(guess)   
             else:
-                guessed = True 
+                game_over = True 
         else:
             print("Not a valid Guess, please try again")                     
 
