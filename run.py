@@ -16,6 +16,7 @@ def generate_word():
     word = random.choice(random_words)
     hidden_word = '_' * len(word)
     print(hidden_word)
+    return(hidden_word)
 
 def is_input_valid():
     """
@@ -25,7 +26,7 @@ def is_input_valid():
     """
     pass
 
-def play_game():
+def play_game(word):
     """
     Allow the user to make guesses
     Keep track of guessed letters and words so they can't be guessed again
@@ -74,5 +75,5 @@ def main():
     pass
 
 get_name()
-generate_word()
-play_game()
+word = generate_word()
+play_game(word)
