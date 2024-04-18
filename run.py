@@ -63,6 +63,10 @@ def play_game(word):
                 game_over = True 
         else:
             print("Not a valid Guess, please try again")                     
+    if game_over:
+        print(f"congratulations! You got that {word} was the word")
+    else:
+        print(f"Sorry! You ran out of lives! The word was {word}")     
 
 
 def display_hangman():
