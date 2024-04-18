@@ -14,7 +14,7 @@ def generate_word():
     Hide the word so it can't be seen
     """
     word = random.choice(random_words)
-    #hidden_word = '_' * len(word)gg
+    #hidden_word = '_' * len(word)
     print("The word is:\n")
     #print(hidden_word)
     #return(hidden_word).upper
