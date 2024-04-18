@@ -6,7 +6,7 @@ def get_name():
     Asks user for their name to display
     """
     name = input("What's your name?\n")
-    print(f"Hi! {name}! Let's play hangman!\n") 
+    print(f"\nHi! {name}! Let's play hangman!\n") 
 
 def generate_word():
     """
@@ -14,10 +14,10 @@ def generate_word():
     Hide the word so it can't be seen
     """
     word = random.choice(random_words)
-    #hidden_word = '_' * len(word)
+    #hidden_word = '_' * len(word)gg
     print("The word is:\n")
     #print(hidden_word)
-    #return(hidden_word)
+    #return(hidden_word).upper
     print(word)
     return word.upper()
 
@@ -41,32 +41,32 @@ def play_game(word):
     game_over = False
 
     while not game_over and lives > 0:
-        guess = input("Please guess a letter or word: ").upper()
+        guess = input("\nPlease guess a letter or word: \n").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
-                print(f"You already guessed: {guess}!")
+                print(f"You already guessed: {guess}!\n")
             elif guess not in word:
-                print(f"Sorry! {guess} is not in the word.") 
+                print(f"Sorry! {guess} is not in the word.\n") 
                 lives -= 1
                 guessed_letters.append(guess)   
             else:
-                print(f"Well done! {guess} is in the word!")    
+                print(f"Well done! {guess} is in the word!\n")    
                 guessed_letters.append(guess)
         elif len(guess) == len(word) and guess.isalpha(): 
             if guess in guessed_words:
-                print(f"You already guessed: {guess}!")
+                print(f"You already guessed: {guess}!\n")
             elif guess != word:
-                print(f"Sorry! {guess} is not the word!")
+                print(f"Sorry! {guess} is not the word!\n")
                 lives -= 1
                 guessed_words.append(guess)   
             else:
                 game_over = True 
         else:
-            print("Not a valid Guess, please try again")                     
+            print("\nNot a valid Guess, please try again\n")                     
     if game_over:
-        print(f"congratulations! You got that {word} was the word")
+        print(f"\ncongratulations! You got that the word was {word}\n")
     else:
-        print(f"Sorry! You ran out of lives! The word was {word}")     
+        print(f"\nSorry! You ran out of lives! The word was {word}\n")     
 
 
 def display_hangman():
