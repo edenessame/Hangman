@@ -48,6 +48,7 @@ def play_game(word):
             elif guess not in word:
                 print(f"Sorry! {guess} is not in the word.\n") 
                 lives -= 1
+                print(f"You lost a life, you have {lives} lives left.")
                 guessed_letters.append(guess)   
             else:
                 print(f"Well done! {guess} is in the word!\n")    
@@ -58,6 +59,7 @@ def play_game(word):
             elif guess != word:
                 print(f"Sorry! {guess} is not the word!\n")
                 lives -= 1
+                print(f"You lost a life, you have {lives} lives left.")
                 guessed_words.append(guess)   
             else:
                 game_over = True 
