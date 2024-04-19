@@ -68,6 +68,10 @@ def play_game(word):
     else:
         print(f"\nSorry! You ran out of lives! The word was {word}\n")     
 
+def reveal_word():
+    """
+    When a letter is guessed correctly replace _ with the letter
+    """
 
 def display_hangman():
     """
