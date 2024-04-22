@@ -41,6 +41,7 @@ def play_game(word):
     game_over = False
 
     while not game_over and lives > 0:
+        print(f"letters guessed: {guessed_letters}")
         guess = input("\nPlease guess a letter or word: \n").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
@@ -70,7 +71,7 @@ def play_game(word):
     else:
         print(f"\nSorry! You ran out of lives! The word was {word}\n")     
 
-def reveal_word():
+def reveal_word(word):
     """
     When a letter is guessed correctly replace _ with the letter
     """
