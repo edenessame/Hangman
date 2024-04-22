@@ -62,6 +62,9 @@ def play_game(word):
             else:
                 print(f"Well done! {guess} is in the word!\n")    
                 guessed_letters.append(guess)
+                for letter in word:
+                    if letter in guessed_letters:
+                        print(letter, end = "")
         elif len(guess) == len(word) and guess.isalpha(): 
             if guess in guessed_words:
                 print(f"You already guessed: {guess}!\n")
