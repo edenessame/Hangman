@@ -41,7 +41,9 @@ def play_game(word):
     game_over = False
 
     while not game_over and lives > 0:
-        print(f"letters guessed: {guessed_letters}")
+        print(f"letters guessed: ")
+        for letter in guessed_letters:
+            print(letter, end=" ")
         guess = input("\nPlease guess a letter or word: \n").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
