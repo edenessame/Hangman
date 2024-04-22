@@ -77,6 +77,7 @@ def reveal_word(word):
     """
     When a letter is guessed correctly replace _ with the letter
     """
+    pass
 
 def display_hangman():
     """
