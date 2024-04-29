@@ -36,6 +36,7 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 ## Bugs
 
 * The input didn't recognise uppercase guesses, so i had to add .upper to the word and the guess so that if either an upper or lowercase letter were guessed the program recognised them as the same.
+* I was getting an error message for my word variable: "TypeError: argument of type 'builtin_function_or_method' is not iterable" one of the tutor team helped me realise that I was using the wrong syntax in my generate_word function: `return(word).upper` and I was returning the method of the string instead of an actual string, so I needed to change it to `return word.upper()`
 
 ## Credits
 
