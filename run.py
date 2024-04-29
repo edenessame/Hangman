@@ -14,10 +14,10 @@ def generate_word():
     Hide the word so it can't be seen
     """
     random_word = random.choice(random_words)
-    word = '_' * len(random_word)
+    hidden_word = '_' * len(random_word)
     print("The word is:\n")
-    print(word)
-    return(word).upper
+    print(hidden_word)
+    return hidden_word.upper()
 
 
 def is_input_valid():
@@ -32,7 +32,7 @@ def is_input_valid():
     """
     When a letter is guessed correctly replace _ with the letter
     """
-    return ["_" for _ in word]
+    #return ["_" for _ in word]
 
 
 def play_game(word):
@@ -45,6 +45,7 @@ def play_game(word):
     guessed_words = []
     lives = 6
     game_over = False
+    print(f'word: {word}')
 
     while not game_over and lives > 0:
         print(f"letters guessed: ")
