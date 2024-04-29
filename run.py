@@ -46,6 +46,8 @@ def play_game(word):
     hidden_word = '_' * len(word)
     print(hidden_word)
 
+    display = " "
+
     guessed_letters = []
     guessed_words = []
     lives = 6
@@ -69,7 +71,8 @@ def play_game(word):
                 guessed_letters.append(guess)
                 for letter in word:
                     if letter in guessed_letters:
-                        print(letter, end = "")
+                        hidden_word = hidden_word.replace(letter, "_")
+
         elif len(guess) == len(word) and guess.isalpha(): 
             if guess in guessed_words:
                 print(f"You already guessed: {guess}!\n")
@@ -82,7 +85,7 @@ def play_game(word):
                 game_over = True 
         else:
             print("\nNot a valid Guess, please try again\n") 
-        print(f'The word is: {word}')                        
+        print(f"\nThe word is: {hidden_word}")                        
     if game_over:
         print(f"\ncongratulations! You got that the word was {word}\n")
     else:
