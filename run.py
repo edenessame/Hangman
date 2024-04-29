@@ -45,7 +45,6 @@ def play_game(word):
     guessed_words = []
     lives = 6
     game_over = False
-    print(f'word: {word}')
 
     while not game_over and lives > 0:
         print(f"letters guessed: ")
@@ -77,7 +76,8 @@ def play_game(word):
             else:
                 game_over = True 
         else:
-            print("\nNot a valid Guess, please try again\n")                     
+            print("\nNot a valid Guess, please try again\n") 
+        print(f'The word is: {word}')                        
     if game_over:
         print(f"\ncongratulations! You got that the word was {word}\n")
     else:
