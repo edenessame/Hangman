@@ -14,10 +14,10 @@ def generate_word():
     Hide the word so it can't be seen
     """
     random_word = random.choice(random_words)
-    hidden_word = '_' * len(random_word)
-    print("The word is:\n")
-    print(hidden_word)
-    return hidden_word.upper()
+    #hidden_word = '_' * len(random_word)
+    #print("The word is:\n")
+    #print(hidden_word)
+    return random_word.upper()
 
 
 def is_input_valid():
@@ -28,19 +28,24 @@ def is_input_valid():
     """
     pass
 
-#def hide_word(word):
+def hide_word(word):
     """
     When a letter is guessed correctly replace _ with the letter
     """
-    #return ["_" for _ in word]
+    return ["_" for _ in word]
 
 
-def play_game(word):
+def play_game():
     """
     Allow the user to make guesses
     Keep track of guessed letters and words so they can't be guessed again
     Keep track of lives used
     """
+    word = generate_word() 
+    print(word) 
+    hidden_word = hide_word(generate_word) 
+    print(hidden_word)
+
     guessed_letters = []
     guessed_words = []
     lives = 6
@@ -98,5 +103,5 @@ def main():
     pass
 
 get_name()
-word = generate_word()
-play_game(word)
+#word = generate_word()
+play_game()
