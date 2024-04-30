@@ -54,7 +54,7 @@ def play_game(word):
     game_over = False    
 
     
-    display = " "
+    #display = " "
     while not game_over and lives > 0:
         print(f"letters guessed: ")
         for letter in guessed_letters:
@@ -71,12 +71,14 @@ def play_game(word):
             else:
                 print(f"Well done! {guess} is in the word!\n")    
                 guessed_letters.append(guess)
+                print("this is the guess: ", guess)
+                display = ""
                 for letter in word:
                     if letter in guessed_letters:
                         display += letter
                     else:
                         display += "_"
-                #print(display)        
+                
 
 
 
