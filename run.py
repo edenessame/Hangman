@@ -60,6 +60,7 @@ def play_game(word):
         for letter in guessed_letters:
             print(letter, end=" ")
         guess = input("\nPlease guess a letter or word: \n").upper()
+        print(f"You guessed: {guess}")
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print(f"You already guessed: {guess}!\n")
@@ -71,13 +72,14 @@ def play_game(word):
             else:
                 print(f"Well done! {guess} is in the word!\n")    
                 guessed_letters.append(guess)
-                print("this is the guess: ", guess)
                 display = ""
                 for letter in word:
                     if letter in guessed_letters:
                         display += letter
                     else:
                         display += "_"
+                if "_" not in display:
+                        game_over = True    
                 
 
 
@@ -102,7 +104,7 @@ def play_game(word):
         print(display)    
         #print(f"\nThe word is: {hidden_word}")                        
     if game_over:
-        print(f"\ncongratulations! You got that the word was {word}\n")
+        print(f"\nCongratulations! You got the word was {word}\n")
     else:
         print(f"\nSorry! You ran out of lives! The word was {word}\n")     
 
