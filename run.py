@@ -43,8 +43,9 @@ def play_game(word):
     Keep track of lives used
     """
     print(word) 
-    hidden_word = '_' * len(word)
-    print(hidden_word)
+    #hidden_word = '_' * len(word)
+    #print(hidden_word)
+    print('_' * len(word))
 
     display = " "
 
@@ -71,7 +72,17 @@ def play_game(word):
                 guessed_letters.append(guess)
                 for letter in word:
                     if letter in guessed_letters:
-                        hidden_word = hidden_word.replace(letter, "_")
+                        display += letter
+                    else:
+                        display += "_"
+                print(display)        
+
+
+
+                #for letter in word:
+                    #if letter in guessed_letters:
+                        #hidden_word = hidden_word.replace("_", letter)
+                        #print(hidden_word)
 
         elif len(guess) == len(word) and guess.isalpha(): 
             if guess in guessed_words:
@@ -85,7 +96,7 @@ def play_game(word):
                 game_over = True 
         else:
             print("\nNot a valid Guess, please try again\n") 
-        print(f"\nThe word is: {hidden_word}")                        
+        #print(f"\nThe word is: {hidden_word}")                        
     if game_over:
         print(f"\ncongratulations! You got that the word was {word}\n")
     else:
