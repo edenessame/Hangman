@@ -46,14 +46,15 @@ def play_game(word):
     #hidden_word = '_' * len(word)
     #print(hidden_word)
     print('_' * len(word))
-
-    display = " "
+    
 
     guessed_letters = []
     guessed_words = []
     lives = 6
-    game_over = False
+    game_over = False    
 
+    
+    display = " "
     while not game_over and lives > 0:
         print(f"letters guessed: ")
         for letter in guessed_letters:
@@ -75,7 +76,7 @@ def play_game(word):
                         display += letter
                     else:
                         display += "_"
-                print(display)        
+                #print(display)        
 
 
 
@@ -96,6 +97,7 @@ def play_game(word):
                 game_over = True 
         else:
             print("\nNot a valid Guess, please try again\n") 
+        print(display)    
         #print(f"\nThe word is: {hidden_word}")                        
     if game_over:
         print(f"\ncongratulations! You got that the word was {word}\n")
