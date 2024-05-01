@@ -6,7 +6,16 @@ def get_name():
     Asks user for their name to display
     """
     name = input("What's your name?\n")
-    print(f"\nHi! {name}! Let's play hangman!\n") 
+    print(f"\nHi! {name}! Let's play hangman!\n")
+    print("How to play:") 
+    print("The word is hidden under underscores.")
+    print("A correct guess will reveal the letter.")
+    print("You can guess letters or the whole word.")   
+    print("Each wrong guess you will lose a life.")
+    print("Each life lost will reveal part of the hangman.") 
+    print("You have 6 lives to guess the word or you lose.")
+    print("Good luck!\n")  
+
 
 def generate_word():
     """
