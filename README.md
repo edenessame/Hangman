@@ -38,6 +38,7 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 * The input didn't recognise uppercase guesses, so i had to add .upper to the word and the guess so that if either an upper or lowercase letter were guessed the program recognised them as the same.
 * I was getting an error message for my word variable: "TypeError: argument of type 'builtin_function_or_method' is not iterable" one of the tutor team helped me realise that I was using the wrong syntax in my generate_word function: `return(word).upper` and I was returning the method of the string instead of an actual string, so I needed to change it to `return word.upper()`
 * After each guess my display variable would save each iteration and append it next to the previous one and print the previous ones, rather than just the current guess, a member of the tutor team helped me realise that I needed to put the display variable inside the while loop so that it cleared each time and looked correct.
+* I tested as the lives decreased the different corresponding stages of the hangman image apeared and when it was complete the user was told they had run out of lives.
 
 ## Credits
 
