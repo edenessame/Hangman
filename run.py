@@ -34,7 +34,16 @@ def is_input_valid():
     """
     #return ["_" for _ in word]
 
-
+def display_hangman(lives):
+    """
+    Create the hangman display in its different stages
+    """
+    if (lives == 6):
+    elif (lives == 5):
+    elif (lives == 4):
+    elif (lives == 3):
+    elif (lives == 2):
+    elif (lives == 1):
 
 def play_game(word):
     """
@@ -110,11 +119,7 @@ def play_game(word):
 
 
 
-def display_hangman():
-    """
-    Create the hangman display in its different stages
-    """
-    pass
+
 
 def main():
     """
