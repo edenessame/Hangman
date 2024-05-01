@@ -137,6 +137,9 @@ def play_game():
 
     word = generate_word()
     print(word)
+    hidden_word = '_' * len(word)
+    print(f"The word is: {hidden_word}")
+    
     #display = reveal_word(guessed_letters)
     #print(display)   
 
