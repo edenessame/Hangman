@@ -47,10 +47,45 @@ def display_hangman(lives):
         print(" |"     )
         print("=======")
     elif (lives == 5):
+        print("\n-----")
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print("=======")
     elif (lives == 4):
+        print("\n-----")
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print("=======")
     elif (lives == 3):
+        print("\n-----")
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print("=======")
     elif (lives == 2):
+        print("\n-----")
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print("=======")
     elif (lives == 1):
+        print("\n-----")
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print("=======")
 
 def play_game(word):
     """
@@ -83,6 +118,7 @@ def play_game(word):
             elif guess not in word:
                 print(f"Sorry! {guess} is not in the word.\n") 
                 lives -= 1
+                display_hangman(lives)
                 print(f"You lost a life, you have {lives} lives left.")
                 guessed_letters.append(guess)   
             else:
@@ -96,7 +132,7 @@ def play_game(word):
                         display += "_"
                 if "_" not in display:
                         game_over = True    
-                
+                print(display)
 
 
 
@@ -111,13 +147,14 @@ def play_game(word):
             elif guess != word:
                 print(f"Sorry! {guess} is not the word!\n")
                 lives -= 1
+                display_hangman(lives)
                 print(f"You lost a life, you have {lives} lives left.")
                 guessed_words.append(guess)   
             else:
                 game_over = True 
         else:
             print("\nNot a valid Guess, please try again\n") 
-        print(display)    
+        #print(display)    
         #print(f"\nThe word is: {hidden_word}")                        
     if game_over:
         print(f"\nCongratulations! You got the word was {word}\n")
