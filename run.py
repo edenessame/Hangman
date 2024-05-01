@@ -39,6 +39,13 @@ def display_hangman(lives):
     Create the hangman display in its different stages
     """
     if (lives == 6):
+        print("\n-----")
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print(" |"     )
+        print("=======")
     elif (lives == 5):
     elif (lives == 4):
     elif (lives == 3):
