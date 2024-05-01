@@ -28,11 +28,27 @@ def is_input_valid():
     """
     pass
 
-#def hide_word(word):
+#def reveal_word(letters):
     """
     When a letter is guessed correctly replace _ with the letter
     """
     #return ["_" for _ in word]
+    #word = generate_word()
+
+    display = ""
+    correct_letters = 0
+    for letter in word:
+        if letter in letters:
+            display += letter
+            correct_letters += 1
+        else:
+            display += "_"
+    if "_" not in display:
+        game_over = True 
+    print(display)
+    return display
+    return correct_letters         
+
 
 def display_hangman(lives):
     """
@@ -93,31 +109,44 @@ def display_hangman(lives):
         print(" |       ")
         print("=========")    
 
-def play_game(word):
+def play_game():
     """
     Allow the user to make guesses
     Keep track of guessed letters and words so they can't be guessed again
     Keep track of lives used
     """
-    print(word) 
+    
     #hidden_word = '_' * len(word)
     #print(hidden_word)
-    print('_' * len(word))
+    #print('_' * len(word))
     
 
     guessed_letters = []
     guessed_words = []
     lives = 6
-    game_over = False    
+    game_over = False 
+
+    word = generate_word()
+    print(word)
+    #display = reveal_word(guessed_letters)
+    #print(display)   
 
     
-    #display = " "
+    #display = ""
+    
+
     while not game_over and lives > 0:
+        
+        #print(reveal_word(guessed_letters))
         print(f"letters guessed: ")
         for letter in guessed_letters:
             print(letter, end=" ")
         guess = input("\nPlease guess a letter or word: \n").upper()
+        #guessed_letters.append(guess)
         print(f"You guessed: {guess}")
+        #print(reveal_word(guess))
+        
+        #print(display)
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print(f"You already guessed: {guess}!\n")
@@ -130,15 +159,18 @@ def play_game(word):
             else:
                 print(f"Well done! {guess} is in the word!\n")    
                 guessed_letters.append(guess)
-                display = ""
-                for letter in word:
-                    if letter in guessed_letters:
-                        display += letter
-                    else:
-                        display += "_"
-                if "_" not in display:
-                        game_over = True    
-                print(display)
+
+                #revealing_word = reveal_word(guessed_letters) 
+                #print(revealing_word) 
+                #display = ""
+                #for letter in word:
+                    #if letter in guessed_letters:
+                        #display += letter
+                    #else:
+                        #display += "_"
+                #if "_" not in display:
+                        #game_over = True    
+                #print(display)
 
 
 
@@ -159,9 +191,20 @@ def play_game(word):
             else:
                 game_over = True 
         else:
-            print("\nNot a valid Guess, please try again\n") 
-        #print(display)    
-        #print(f"\nThe word is: {hidden_word}")                        
+            print("\nNot a valid Guess, please try again\n")
+        display = ""
+        for letter in word:
+            if letter in guessed_letters:
+                display += letter
+            else:
+                display += "_"
+        if "_" not in display:
+                game_over = True   
+        print(display)         
+
+    print(display)    
+        #print(f"\nThe word is: {hidden_word}") 
+        #revealing_word = reveal_word(guessed_letters)                      
     if game_over:
         print(f"\nCongratulations! You got the word was {word}\n")
     else:
@@ -178,5 +221,6 @@ def main():
     pass
 
 get_name()
+#play_game()
 word = generate_word()
-play_game(word)
+play_game()
