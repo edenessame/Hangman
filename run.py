@@ -200,9 +200,9 @@ def play_game():
                 display += "_"
         if "_" not in display:
                 game_over = True   
-        print(display)         
+        print(f"The word is: {display}")         
 
-    print(display)    
+       
         #print(f"\nThe word is: {hidden_word}") 
         #revealing_word = reveal_word(guessed_letters)                      
     if game_over:
