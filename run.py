@@ -227,9 +227,11 @@ def play_game():
     if play_again == "Y":
         print("Great! Let's play!")
         main()
-    else:
+    elif play_again == "N":
         print("Ok, have a great day!")
-        return        
+        return
+    else:
+        print("Sorry, invalid entry. Please enter 'Y' or 'N'.")            
     
 
 
