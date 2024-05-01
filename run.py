@@ -38,16 +38,9 @@ def display_hangman(lives):
     """
     Create the hangman display in its different stages
     """
-    if (lives == 6):
+    if (lives == 5):
         print("\n-------")
-        print(" |       ")
-        print(" |       ")
-        print(" |       ")
-        print(" |       ")
-        print(" |       ")
-        print("=========")
-    elif (lives == 5):
-        print("\n-------")
+        print(" |    |  ")
         print(" |    O  ")
         print(" |       ")
         print(" |       ")
@@ -56,6 +49,7 @@ def display_hangman(lives):
         print("=========")
     elif (lives == 4):
         print("\n-------")
+        print(" |    |  ")
         print(" |    O  ")
         print(" |    |  ")
         print(" |       ")
@@ -64,6 +58,7 @@ def display_hangman(lives):
         print("=========")
     elif (lives == 3):
         print("\n-------")
+        print(" |    |  ")
         print(" |    O  ")
         print(" |   /|  ")
         print(" |       ")
@@ -72,6 +67,7 @@ def display_hangman(lives):
         print("=========")
     elif (lives == 2):
         print("\n-------")
+        print(" |    |  ")
         print(" |    O  ")
         print(" |   /|\ ")
         print(" |       ")
@@ -80,6 +76,7 @@ def display_hangman(lives):
         print("=========")
     elif (lives == 1):
         print("\n-------")
+        print(" |    |  ")
         print(" |    O  ")
         print(" |   /|\ ")
         print(" |   /   ")
@@ -88,6 +85,7 @@ def display_hangman(lives):
         print("=========")
     elif (lives == 0):
         print("\n-------")
+        print(" |    |  ")
         print(" |    O  ")
         print(" |   /|\ ")
         print(" |   / \ ")
