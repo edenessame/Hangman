@@ -209,7 +209,16 @@ def play_game():
         print(f"\nCongratulations! You got the word was {word}\n")
     else:
         print(f"\nSorry! You ran out of lives! The word was {word}\n")     
+    
+    play_again = input("\nWould you like to play again? (Y/N):\n").upper()
 
+    if play_again == "Y":
+        print("Great! Let's play!")
+        main()
+    else:
+        print("Ok, have a great day!")
+        return        
+    
 
 
 
@@ -218,9 +227,8 @@ def main():
     """
     calls all the main functions
     """
-    pass
+    get_name()
+    word = generate_word()
+    play_game()
 
-get_name()
-#play_game()
-word = generate_word()
-play_game()
+main()
