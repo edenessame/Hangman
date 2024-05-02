@@ -7,11 +7,11 @@ def get_name():
     """
     name = input("What's your name?\n")
     print(f"\nHi! {name}! Let's play hangman!\n")
-    print("How to play:") 
+    print("How to play:\n") 
     print("The word is hidden under underscores.")
     print("A correct guess will reveal the letter.")
     print("You can guess letters or the whole word.")   
-    print("Each wrong guess you will lose a life.")
+    print("Each wrong guess you will lose you a life.")
     print("Each life lost will reveal part of the hangman.") 
     print("You have 6 lives to guess the word or you lose.")
     print("Good luck!\n")  
@@ -23,12 +23,12 @@ def play():
     while True:
         user_input = input("\nWould you like to play? (Y/N):\n").upper() 
         if user_input == "Y":
-            print("Great! Let's play!")
+            print("\nGreat! Let's play!\n")
             return True
         elif user_input == "N":
             return False
         else:
-            print("Invalid entry. Please enter 'Y' or 'N'.")
+            print("\nInvalid entry. Please enter 'Y' or 'N'.\n")
 
 def generate_word():
     """
@@ -77,59 +77,59 @@ def display_hangman(lives):
     Create the hangman display in its different stages
     """
     if (lives == 5):
-        print("\n-------")
+        print("---------")
         print(" |    |  ")
         print(" |    O  ")
         print(" |       ")
         print(" |       ")
         print(" |       ")
         print(" |       ")
-        print("=========")
+        print("=========\n")
     elif (lives == 4):
-        print("\n-------")
+        print("---------")
         print(" |    |  ")
         print(" |    O  ")
         print(" |    |  ")
         print(" |       ")
         print(" |       ")
         print(" |       ")
-        print("=========")
+        print("=========\n")
     elif (lives == 3):
-        print("\n-------")
+        print("---------")
         print(" |    |  ")
         print(" |    O  ")
         print(" |   /|  ")
         print(" |       ")
         print(" |       ")
         print(" |       ")
-        print("=========")
+        print("=========\n")
     elif (lives == 2):
-        print("\n-------")
+        print("---------")
         print(" |    |  ")
         print(" |    O  ")
         print(" |   /|\ ")
         print(" |       ")
         print(" |       ")
         print(" |       ")
-        print("=========")
+        print("=========\n")
     elif (lives == 1):
-        print("\n-------")
+        print("---------")
         print(" |    |  ")
         print(" |    O  ")
         print(" |   /|\ ")
         print(" |   /   ")
         print(" |       ")
         print(" |       ")
-        print("=========")
+        print("=========\n")
     elif (lives == 0):
-        print("\n-------")
+        print("---------")
         print(" |    |  ")
         print(" |    O  ")
         print(" |   /|\ ")
         print(" |   / \ ")
         print(" |       ")
         print(" |       ")
-        print("=========")    
+        print("=========\n")    
 
 def play_game():
     """
@@ -147,7 +147,7 @@ def play_game():
         play_the_game = play()
 
         if not play_the_game:
-            print("Ok, have a great day!")
+            print("\nOk, have a great day!\n")
             return
 
 
@@ -159,7 +159,7 @@ def play_game():
         word = generate_word()
         print(word)
         hidden_word = '_' * len(word)
-        print(f"The word is: {hidden_word}")
+        print(f"The word is: {hidden_word}\n")
         
         #display = reveal_word(guessed_letters)
         #print(display)   
@@ -176,7 +176,7 @@ def play_game():
                 print(letter, end=" ")
             guess = input("\nPlease guess a letter or word: \n").upper()
             #guessed_letters.append(guess)
-            print(f"You guessed: {guess}")
+            print(f"You guessed: {guess}\n")
             #print(reveal_word(guess))
             
             #print(display)
@@ -187,7 +187,7 @@ def play_game():
                     print(f"Sorry! {guess} is not in the word.\n") 
                     lives -= 1
                     display_hangman(lives)
-                    print(f"You lost a life, you have {lives} lives left.")
+                    print(f"You lost a life, you have {lives} lives left.\n")
                     guessed_letters.append(guess)   
                 else:
                     print(f"Well done! {guess} is in the word!\n")    
@@ -219,7 +219,7 @@ def play_game():
                     print(f"Sorry! {guess} is not the word!\n")
                     lives -= 1
                     display_hangman(lives)
-                    print(f"You lost a life, you have {lives} lives left.")
+                    print(f"You lost a life, you have {lives} lives left.\n")
                     guessed_words.append(guess)   
                 else:
                     game_over = True 
@@ -233,13 +233,13 @@ def play_game():
                     display += "_"
             if "_" not in display:
                     game_over = True   
-            print(f"The word is: {display}")         
+            print(f"The word is: {display}\n")         
 
         
             #print(f"\nThe word is: {hidden_word}") 
             #revealing_word = reveal_word(guessed_letters)                      
         if game_over:
-            print(f"\nCongratulations! You got the word was {word}\n")
+            print(f"\nCongratulations! You got it correct! The word was {word}\n")
         else:
             print(f"\nSorry! You ran out of lives! The word was {word}\n")     
             
