@@ -16,6 +16,19 @@ def get_name():
     print("You have 6 lives to guess the word or you lose.")
     print("Good luck!\n")  
 
+def play():
+    """
+    Check if the player wants to play the game
+    """
+    while True:
+        user_input = input("\nWould you like to play? (Y/N):\n").upper() 
+        if user_input == "Y":
+            print("Great! Let's play!")
+            return True
+        elif user_input == "N":
+            return False
+        else:
+            print("Invalid entry. Please enter 'Y' or 'N'.")
 
 def generate_word():
     """
@@ -129,109 +142,107 @@ def play_game():
     #print(hidden_word)
     #print('_' * len(word))
     
-
-    guessed_letters = []
-    guessed_words = []
-    lives = 6
-    game_over = False 
-
-    word = generate_word()
-    print(word)
-    hidden_word = '_' * len(word)
-    print(f"The word is: {hidden_word}")
-    
-    #display = reveal_word(guessed_letters)
-    #print(display)   
-
-    
-    #display = ""
-    
-
-    while not game_over and lives > 0:
+    while True:
         
-        #print(reveal_word(guessed_letters))
-        print(f"letters guessed: ")
-        for letter in guessed_letters:
-            print(letter, end=" ")
-        guess = input("\nPlease guess a letter or word: \n").upper()
-        #guessed_letters.append(guess)
-        print(f"You guessed: {guess}")
-        #print(reveal_word(guess))
+        play_the_game = play()
+
+        if not play_the_game:
+            print("Ok, have a great day!")
+            return
+
+
+        guessed_letters = []
+        guessed_words = []
+        lives = 6
+        game_over = False 
+
+        word = generate_word()
+        print(word)
+        hidden_word = '_' * len(word)
+        print(f"The word is: {hidden_word}")
         
-        #print(display)
-        if len(guess) == 1 and guess.isalpha():
-            if guess in guessed_letters:
-                print(f"You already guessed: {guess}!\n")
-            elif guess not in word:
-                print(f"Sorry! {guess} is not in the word.\n") 
-                lives -= 1
-                display_hangman(lives)
-                print(f"You lost a life, you have {lives} lives left.")
-                guessed_letters.append(guess)   
+        #display = reveal_word(guessed_letters)
+        #print(display)   
+
+        
+        #display = ""
+        
+
+        while not game_over and lives > 0:
+            
+            #print(reveal_word(guessed_letters))
+            print(f"letters guessed: ")
+            for letter in guessed_letters:
+                print(letter, end=" ")
+            guess = input("\nPlease guess a letter or word: \n").upper()
+            #guessed_letters.append(guess)
+            print(f"You guessed: {guess}")
+            #print(reveal_word(guess))
+            
+            #print(display)
+            if len(guess) == 1 and guess.isalpha():
+                if guess in guessed_letters:
+                    print(f"You already guessed: {guess}!\n")
+                elif guess not in word:
+                    print(f"Sorry! {guess} is not in the word.\n") 
+                    lives -= 1
+                    display_hangman(lives)
+                    print(f"You lost a life, you have {lives} lives left.")
+                    guessed_letters.append(guess)   
+                else:
+                    print(f"Well done! {guess} is in the word!\n")    
+                    guessed_letters.append(guess)
+
+                    #revealing_word = reveal_word(guessed_letters) 
+                    #print(revealing_word) 
+                    #display = ""
+                    #for letter in word:
+                        #if letter in guessed_letters:
+                            #display += letter
+                        #else:
+                            #display += "_"
+                    #if "_" not in display:
+                            #game_over = True    
+                    #print(display)
+
+
+
+                    #for letter in word:
+                        #if letter in guessed_letters:
+                            #hidden_word = hidden_word.replace("_", letter)
+                            #print(hidden_word)
+
+            elif len(guess) == len(word) and guess.isalpha(): 
+                if guess in guessed_words:
+                    print(f"You already guessed: {guess}!\n")
+                elif guess != word:
+                    print(f"Sorry! {guess} is not the word!\n")
+                    lives -= 1
+                    display_hangman(lives)
+                    print(f"You lost a life, you have {lives} lives left.")
+                    guessed_words.append(guess)   
+                else:
+                    game_over = True 
             else:
-                print(f"Well done! {guess} is in the word!\n")    
-                guessed_letters.append(guess)
+                print("\nNot a valid Guess, please try again\n")
+            display = ""
+            for letter in word:
+                if letter in guessed_letters:
+                    display += letter
+                else:
+                    display += "_"
+            if "_" not in display:
+                    game_over = True   
+            print(f"The word is: {display}")         
 
-                #revealing_word = reveal_word(guessed_letters) 
-                #print(revealing_word) 
-                #display = ""
-                #for letter in word:
-                    #if letter in guessed_letters:
-                        #display += letter
-                    #else:
-                        #display += "_"
-                #if "_" not in display:
-                        #game_over = True    
-                #print(display)
-
-
-
-                #for letter in word:
-                    #if letter in guessed_letters:
-                        #hidden_word = hidden_word.replace("_", letter)
-                        #print(hidden_word)
-
-        elif len(guess) == len(word) and guess.isalpha(): 
-            if guess in guessed_words:
-                print(f"You already guessed: {guess}!\n")
-            elif guess != word:
-                print(f"Sorry! {guess} is not the word!\n")
-                lives -= 1
-                display_hangman(lives)
-                print(f"You lost a life, you have {lives} lives left.")
-                guessed_words.append(guess)   
-            else:
-                game_over = True 
+        
+            #print(f"\nThe word is: {hidden_word}") 
+            #revealing_word = reveal_word(guessed_letters)                      
+        if game_over:
+            print(f"\nCongratulations! You got the word was {word}\n")
         else:
-            print("\nNot a valid Guess, please try again\n")
-        display = ""
-        for letter in word:
-            if letter in guessed_letters:
-                display += letter
-            else:
-                display += "_"
-        if "_" not in display:
-                game_over = True   
-        print(f"The word is: {display}")         
-
-       
-        #print(f"\nThe word is: {hidden_word}") 
-        #revealing_word = reveal_word(guessed_letters)                      
-    if game_over:
-        print(f"\nCongratulations! You got the word was {word}\n")
-    else:
-        print(f"\nSorry! You ran out of lives! The word was {word}\n")     
-    
-    play_again = input("\nWould you like to play again? (Y/N):\n").upper()
-
-    if play_again == "Y":
-        print("Great! Let's play!")
-        main()
-    elif play_again == "N":
-        print("Ok, have a great day!")
-        return
-    else:
-        print("Sorry, invalid entry. Please enter 'Y' or 'N'.")            
+            print(f"\nSorry! You ran out of lives! The word was {word}\n")     
+            
     
 
 
