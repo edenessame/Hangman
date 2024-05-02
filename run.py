@@ -4,6 +4,7 @@ from words import random_words
 def get_name():
     """
     Asks user for their name to display
+    Tell them the rules of the game
     """
     name = input("What's your name?\n")
     print(f"\nHi! {name}! Let's play hangman!\n")
@@ -15,6 +16,7 @@ def get_name():
     print("Each life lost will reveal part of the hangman.") 
     print("You have 6 lives to guess the word or you lose.")
     print("Good luck!\n")  
+
 
 def play():
     """
@@ -30,10 +32,10 @@ def play():
         else:
             print("\nInvalid entry. Please enter 'Y' or 'N'.\n")
 
+
 def generate_word():
     """
     Randomly select a word to use from the word list 
-    Hide the word so it can't be seen
     """
     random_word = random.choice(random_words)
     return random_word.upper()
@@ -100,12 +102,14 @@ def display_hangman(lives):
 
 def play_game():
     """
-    Allow the user to make guesses
-    Keep track of guessed letters and words so they can't be guessed again
-    Keep track of lives used
+    Call the play function to ask the user if they want to play or not.
+    Display the word to the user.
+    Allow the user to make guesses.
+    Keep track of guessed letters and words so they can't be guessed again.
+    Call the hang_man display function depending on how many lives have been lost.
+    Determine if the user was correct or ran out of lives.
     """
     while True:
-        
         play_the_game = play()
 
         if not play_the_game:
@@ -170,7 +174,7 @@ def play_game():
             
 def main():
     """
-    calls all the main functions
+    Calls all the main functions to play the game.
     """
     get_name()
     word = generate_word()
