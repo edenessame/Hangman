@@ -100,6 +100,7 @@ def display_hangman(lives):
         print(" |       ")
         print("=========\n")    
 
+
 def play_game():
     """
     Call the play function to ask the user if they want to play or not.
@@ -122,19 +123,23 @@ def play_game():
         game_over = False 
 
         word = generate_word()
-        print(word)   
+        print(word)
+        hidden_word = "_" * len(word)
+        print(f"The word to guess is: {hidden_word}\n")
+        #display = ""   
+        #print(f"The word to guess is: {display}\n") 
 
         while not game_over and lives > 0:
-            #display = ""
-            #for letter in word:
-                #if letter in guessed_letters:
-                    #display += letter
-                #else:
-                    #display += "_"            
-            #if "_" not in display:
-                #game_over = True   
-            #print(f"The word to guess is: {display}\n")   
-            #print(f"letters guessed: ")
+            display = ""
+            for letter in word:
+                if letter in guessed_letters:
+                    display += letter
+                else:
+                    display += "_"            
+            if "_" not in display:
+                game_over = True   
+            print(f"The word to guess is: {display}\n")   
+            print(f"letters guessed: ")
             for letter in guessed_letters:
                 print(letter, end=" ")
             guess = input("\nPlease guess a letter or word: \n").upper()
@@ -151,6 +156,8 @@ def play_game():
                 else:
                     print(f"Well done! {guess} is in the word!\n")    
                     guessed_letters.append(guess)
+                    if "_" not in display:
+                        game_over = True 
             elif len(guess) == len(word) and guess.isalpha(): 
                 if guess in guessed_words:
                     print(f"You already guessed: {guess}!\n")
