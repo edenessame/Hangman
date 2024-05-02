@@ -6,7 +6,7 @@ def get_name():
     Asks user for their name to display
     Tell them the rules of the game
     """
-    name = input("What's your name?\n")
+    name = input("Hi! What's your name?\n")
     print(f"\nHi! {name}! Let's play hangman!\n")
     print("How to play:\n") 
     print("The word is hidden under underscores.")
@@ -122,12 +122,19 @@ def play_game():
         game_over = False 
 
         word = generate_word()
-        print(word)
-        hidden_word = '_' * len(word)
-        print(f"The word is: {hidden_word}\n")
+        print(word)   
 
         while not game_over and lives > 0:
-            print(f"letters guessed: ")
+            #display = ""
+            #for letter in word:
+                #if letter in guessed_letters:
+                    #display += letter
+                #else:
+                    #display += "_"            
+            #if "_" not in display:
+                #game_over = True   
+            #print(f"The word to guess is: {display}\n")   
+            #print(f"letters guessed: ")
             for letter in guessed_letters:
                 print(letter, end=" ")
             guess = input("\nPlease guess a letter or word: \n").upper()
@@ -156,16 +163,16 @@ def play_game():
                 else:
                     game_over = True 
             else:
-                print("\nNot a valid Guess, please try again\n")
-            display = ""
-            for letter in word:
-                if letter in guessed_letters:
-                    display += letter
-                else:
-                    display += "_"            
-            if "_" not in display:
-                    game_over = True   
-            print(f"The word is: {display}\n")         
+                print("\nNot a valid Guess, please type a letter or word\n")
+            #display = ""
+            #for letter in word:
+                #if letter in guessed_letters:
+                    #display += letter
+                #else:
+                    #display += "_"            
+            #if "_" not in display:
+                    #game_over = True   
+            #print(f"The word to guess is: {display}\n")         
               
         if game_over:
             print(f"Congratulations! You got it correct! The word was {word}\n")
