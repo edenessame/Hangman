@@ -123,27 +123,15 @@ def play_game():
         game_over = False 
 
         word = generate_word()
-        print(word)
         hidden_word = "_" * len(word)
         print(f"The word to guess is: {hidden_word}\n")
-        #display = ""   
-        #print(f"The word to guess is: {display}\n") 
 
         while not game_over and lives > 0:
-            display = ""
-            for letter in word:
-                if letter in guessed_letters:
-                    display += letter
-                else:
-                    display += "_"            
-            if "_" not in display:
-                game_over = True   
-            print(f"The word to guess is: {display}\n")   
             print(f"letters guessed: ")
             for letter in guessed_letters:
                 print(letter, end=" ")
-            guess = input("\nPlease guess a letter or word: \n").upper()
-            print(f"You guessed: {guess}\n")
+            guess = input(f"\nPlease guess a letter or word: ").upper()
+            print(f"\nYou guessed: {guess}\n")
             if len(guess) == 1 and guess.isalpha():
                 if guess in guessed_letters:
                     print(f"You already guessed: {guess}!\n")
@@ -156,8 +144,6 @@ def play_game():
                 else:
                     print(f"Well done! {guess} is in the word!\n")    
                     guessed_letters.append(guess)
-                    if "_" not in display:
-                        game_over = True 
             elif len(guess) == len(word) and guess.isalpha(): 
                 if guess in guessed_words:
                     print(f"You already guessed: {guess}!\n")
@@ -170,17 +156,16 @@ def play_game():
                 else:
                     game_over = True 
             else:
-                print("\nNot a valid Guess, please type a letter or word\n")
-            #display = ""
-            #for letter in word:
-                #if letter in guessed_letters:
-                    #display += letter
-                #else:
-                    #display += "_"            
-            #if "_" not in display:
-                    #game_over = True   
-            #print(f"The word to guess is: {display}\n")         
-              
+                print("\nNot a valid Guess, please type a letter or word\n")   
+            display = ""
+            for letter in word:
+                if letter in guessed_letters:
+                    display += letter
+                else:
+                    display += "_"            
+            if "_" not in display:
+                    game_over = True 
+            print(f"The word to guess is: {display}\n")         
         if game_over:
             print(f"Congratulations! You got it correct! The word was {word}\n")
         else:
