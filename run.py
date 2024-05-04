@@ -1,6 +1,7 @@
 import random
 from words import random_words
 
+
 def get_name():
     """
     Asks user for their name to display
@@ -8,14 +9,14 @@ def get_name():
     """
     name = input("Hi! What's your name?\n")
     print(f"\nHi! {name}! Let's play hangman!\n")
-    print("How to play:\n") 
+    print("How to play:\n")
     print("The word is hidden under underscores.")
     print("A correct guess will reveal the letter.")
-    print("You can guess letters or the whole word.")   
+    print("You can guess letters or the whole word.")
     print("Each wrong guess you will lose you a life.")
-    print("Each life lost will reveal part of the hangman.") 
+    print("Each life lost will reveal part of the hangman.")
     print("You have 6 lives to guess the word or you lose.")
-    print("Good luck!\n")  
+    print("Good luck!\n")
 
 
 def play():
@@ -23,7 +24,7 @@ def play():
     Check if the player wants to play the game
     """
     while True:
-        user_input = input("\nWould you like to play? (Y/N):\n").upper() 
+        user_input = input("\nWould you like to play? (Y/N):\n").upper()
         if user_input == "Y":
             print("\nGreat! Let's play!\n")
             return True
@@ -35,7 +36,7 @@ def play():
 
 def generate_word():
     """
-    Randomly select a word to use from the word list 
+    Randomly select a word to use from the word list
     """
     random_word = random.choice(random_words)
     return random_word.upper()
@@ -98,7 +99,7 @@ def display_hangman(lives):
         print(" |   / \ ")
         print(" |       ")
         print(" |       ")
-        print("=========\n")    
+        print("=========\n")
 
 
 def play_game():
@@ -107,7 +108,7 @@ def play_game():
     Display the word to the user.
     Allow the user to make guesses.
     Keep track of guessed letters and words so they can't be guessed again.
-    Call the hang_man display function depending on how many lives have been lost.
+    Call the hang_man display function based on amount of lives lost.
     Determine if the user was correct or ran out of lives.
     """
     while True:
@@ -120,7 +121,7 @@ def play_game():
         guessed_letters = []
         guessed_words = []
         lives = 6
-        game_over = False 
+        game_over = False
 
         word = generate_word()
         print(word)
@@ -137,15 +138,15 @@ def play_game():
                 if guess in guessed_letters:
                     print(f"You already guessed: {guess}!\n")
                 elif guess not in word:
-                    print(f"Sorry! {guess} is not in the word.\n") 
+                    print(f"Sorry! {guess} is not in the word.\n")
                     lives -= 1
                     display_hangman(lives)
                     print(f"You lost a life, you have {lives} lives left.\n")
-                    guessed_letters.append(guess)   
-                else:
-                    print(f"Well done! {guess} is in the word!\n")    
                     guessed_letters.append(guess)
-            elif len(guess) == len(word) and guess.isalpha(): 
+                else:
+                    print(f"Well done! {guess} is in the word!\n")
+                    guessed_letters.append(guess)
+            elif len(guess) == len(word) and guess.isalpha():
                 if guess in guessed_words:
                     print(f"You already guessed: {guess}!\n")
                 elif guess != word:
@@ -153,25 +154,26 @@ def play_game():
                     lives -= 1
                     display_hangman(lives)
                     print(f"You lost a life, you have {lives} lives left.\n")
-                    guessed_words.append(guess)   
+                    guessed_words.append(guess)
                 else:
-                    game_over = True 
+                    game_over = True
             else:
-                print("\nNot a valid Guess, please type a letter or word\n")   
+                print("\nNot a valid Guess, please type a letter or word\n")
             display = ""
             for letter in word:
                 if letter in guessed_letters:
                     display += letter + " "
                 else:
-                    display += "_ "            
+                    display += "_ "
             if "_ " not in display:
-                    game_over = True 
-            print(f"The word to guess is: {display}\n")         
+                game_over = True
+            print(f"The word to guess is: {display}\n")
         if game_over:
-            print(f"Congratulations! You got it correct! The word was {word}\n")
+            print(f"You got it correct! The word was {word}\n")
         else:
-            print(f"Sorry! You ran out of lives! The word was {word}\n")     
-            
+            print(f"Sorry! You ran out of lives! The word was {word}\n")
+
+
 def main():
     """
     Calls all the main functions to play the game.
@@ -179,5 +181,6 @@ def main():
     get_name()
     word = generate_word()
     play_game()
+
 
 main()
