@@ -10,6 +10,11 @@ The game ends when either the word is guessed correctly or the hanging man is co
 
 This is a computerized version, based inside a mock terminal deployed via Heroku, where the computer chooses the word and the user guesses it.
 
+## Flow Chart
+
+To understand how the logic of the game should work I created the following flow chart using Lucid Charts.
+![Flow chart](README-assets/Hangman-Flowchart.png)
+
 ## Testing
 
 * I commented out the code that hid the word so I could see what the word was to make sure the correct response was recieved. If the letter was in the word the message said that it was and what the letter entered was and if the letter wasn't in the word the message said it wasn't and what the letter entered was.
