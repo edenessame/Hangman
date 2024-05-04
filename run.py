@@ -132,7 +132,7 @@ def play_game():
             print(f"letters guessed: ")
             for letter in guessed_letters:
                 print(letter, end=" ")
-            guess = input(f"\nPlease guess a letter or word: ").upper()
+            guess = input(f"\nPlease guess a letter or word:\n").upper()
             print(f"\nYou guessed: {guess}\n")
             if len(guess) == 1 and guess.isalpha():
                 if guess in guessed_letters:
