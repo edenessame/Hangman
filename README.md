@@ -1,6 +1,14 @@
-
-
 # Hangman
+
+Hangman is a word guessing game, where one person chooses a word and writes it down as a series of dashes representing the letters and another person tries to guess the word. 
+
+If a letter is gessed correctly it is written in the place it should go in the word. 
+
+If a guess is incorrect a part of a hanging man is drawn, with each wrong guess a different part of the body is drawn. 
+
+The game ends when either the word is guessed correctly or the hanging man is completely drawn and the person has run out of guesses.
+
+This is a computerized version, based inside a mock terminal deployed via Heroku, where the computer chooses the word and the user guesses it.
 
 ## Testing
 
