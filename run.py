@@ -123,7 +123,8 @@ def play_game():
         game_over = False 
 
         word = generate_word()
-        hidden_word = "_" * len(word)
+        print(word)
+        hidden_word = "_ " * len(word)
         print(f"The word to guess is: {hidden_word}\n")
 
         while not game_over and lives > 0:
@@ -160,10 +161,10 @@ def play_game():
             display = ""
             for letter in word:
                 if letter in guessed_letters:
-                    display += letter
+                    display += letter + " "
                 else:
-                    display += "_"            
-            if "_" not in display:
+                    display += "_ "            
+            if "_ " not in display:
                     game_over = True 
             print(f"The word to guess is: {display}\n")         
         if game_over:
