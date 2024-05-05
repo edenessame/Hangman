@@ -12,6 +12,19 @@ This is a computerized version, based inside a mock terminal deployed via Heroku
 
 ![The websites appearance on different screen sizes](README-assets/hangman-screens.png)
 
+## User Stories
+
+- As a user, I want the game to be similar to the original.
+- As a user, I want to know the rules of the game.
+- As a user, I want the word to be hidden initially and reveal itself when a letter is guessed correctly.
+- As a user, I want the correct letters to appear in the correct spaces of the word, so its possible to guess what it is.
+- As a user, I want to see the letters I have already guessed, so I don't guess them again.
+- As a user, I want to see a visual image of the hanging man as would be drawn in the original game.
+- As a user, I want to be told how many lives I have left as they go down.
+- As a user, I want to be told If I've won or lost the game.
+- As a user, I want a variety of words to keep it interesting.
+- As a user, I want to be able to continue or end the game.
+
 ## Flow Chart
 
 To understand how the logic of the game should work I created the following flow chart using Lucid Charts.
