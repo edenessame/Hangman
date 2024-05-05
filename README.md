@@ -84,6 +84,12 @@ If the user guesses anything other than a letter or a word they are told its an 
 
 ![Invalid guess](README-assets/invalid-guess.png)
 
+### Already guessed
+
+If the user has already guessed a letter they are told they've already guessed it and to guess again and they don't lose a life.
+
+![Already guessed letters](README-assets/already-guessed.png)
+
 ## Testing
 
 * I commented out the code that hid the word so I could see what the word was to make sure the correct response was recieved. If the letter was in the word the message said that it was and what the letter entered was and if the letter wasn't in the word the message said it wasn't and what the letter entered was.
