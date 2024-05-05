@@ -40,6 +40,12 @@ If the user types y/Y and says they do want to play a word depicted as underscor
 
 ![User wants to play](README-assets/Yes.png)
 
+### Invalid Entry
+
+The user can only type y/Y or n/N if the user types anything else they are told its an invalid entry and to type 'Y' or 'N'.
+
+![Invalid entry](README-assets/play-invalid-entry.png)
+
 ### Guesses correct
 
 If the user guesses a letter correct it replaces the underscores in the word, any letters right or wrong are shown in "Letters guessed" so the user knows what the have already guessed. 
