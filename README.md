@@ -22,6 +22,11 @@ To understand how the logic of the game should work I created the following flow
 On start up the user is greeted with a welcome message, telling them what the game is and asking for their name:
 ![Welcome](README-assets/Welcome.png)
 
+### Rules 
+
+After entering their name, the user is greeted and told the rules of the game and then asked if they would like to play.
+![Rules](README-assets/Rules.png) 
+
 ## Testing
 
 * I commented out the code that hid the word so I could see what the word was to make sure the correct response was recieved. If the letter was in the word the message said that it was and what the letter entered was and if the letter wasn't in the word the message said it wasn't and what the letter entered was.
