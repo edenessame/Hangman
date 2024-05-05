@@ -94,10 +94,13 @@ If the user has already guessed a letter they are told they've already guessed i
 
 ## Testing
 
-* I commented out the code that hid the word so I could see what the word was to make sure the correct response was recieved. If the letter was in the word the message said that it was and what the letter entered was and if the letter wasn't in the word the message said it wasn't and what the letter entered was.
+* I printed the unhidden word as well as the hidden word so that I could make sure they corresponded and when letters were guessed correctly they were revealing the right word.
 * I tested that it kept track of already guessed letters and words so they weren't guessed again. If a previously guessed letter or word was entered, the user was told they had already guessed that letter/word and didn't lose a life.
+* I tested that when the answer was guessed correctly the user was congratulated and told they had won.
 * I tested that the lives decreased with each wrong guess and when they reached 0 the user was told they had lost. 
-* I tested as the lives decreased the different corresponding stages of the hangman image apeared and when it was complete the user was told they had run out of lives.
+* I tested as the lives decreased the different corresponding stages of the hangman image apeared and when it was complete the user was told they had run out of lives and lost and told what the correct word was.
+* I tested that only letters and words with the correct amount of letters could be guessed anything else would get a message telling them it was an invalid guess.
+* I tested that when asked if they wanted to play the correct response happened depending on if they pressed y/Y or n/N and that the user could only write y/Y or n/N, otherwise they were told it was an invalid response and asked to try again.
 
 ## Bugs
 
