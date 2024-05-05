@@ -96,7 +96,7 @@ def display_hangman(lives):
         print(" |    |  ")
         print(" |    O  ")
         print(" |   /|\\")
-        print(" |   / \ ")
+        print(" |   / \\")
         print(" |       ")
         print(" |       ")
         print("=========\n")
