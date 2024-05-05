@@ -121,6 +121,12 @@ No remaining bugs.
   - PEP8 - No errors were returned from https://pep8ci.herokuapp.com/
 ![python validator](README-assets/Python-linter.png)
 
+## Libraries
+
+### random
+
+The random library is used to select a random word from the words list.
+
 ## Credits
 
 * Help understanding and implementing Python came from the Code Institute course.
