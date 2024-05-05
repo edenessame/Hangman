@@ -29,10 +29,25 @@ After entering their name, the user is greeted and told the rules of the game an
 
 ### User Types N
 
-If the user says they don't want to play they are told "Ok, have a great day!" and the game ends.
+If the user types n/N and says they don't want to play they are told "Ok, have a great day!" and the game ends.
 ![User doesn't want to play](README-assets/No.png)
 
 ### User Types Y
+
+If the user types y/Y and says they do want to play a word depicted as underscores is shown and letters they have already guessed and they are asked to guess a letter or word.
+![User wants to play](README-assets/Yes.png)
+
+### Guesses correct
+
+If the user guesses a letter correct it replaces the underscores in the word, any letters right or wrong are shown in "Letters guessed" so the user knows what the have already guessed. 
+![Correct guess](README-assets/correct1.png)
+
+![correct guess two](README-assets/correct-2.png)
+
+![correct guess three](README-assets/correct-3.png)
+
+Until they guess the word corectly, then they are congratulated and asked if they would like to carry on playing.
+![Guessed the word](README-assets/guessed-word.png)
 
 ## Testing
 
