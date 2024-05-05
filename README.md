@@ -54,6 +54,24 @@ Until they guess the word corectly, then they are congratulated and asked if the
 
 ![Guessed the word](README-assets/guessed-word.png)
 
+### Wrong guesses
+
+If the user guesses wrong a different part of the hanging man is drawn and a life is lost, the user is told how many lives they have left and what letters they have guessed and asked to guess again.
+
+![Wrong guess](README-assets/wrong1.png)
+
+![Wrong guess two](README-assets/wrong2.png)
+
+![Wrong guess three](README-assets/wrong3.png)
+
+![Wrong guess four](README-assets/wrong4.png)
+
+![Wrong guess five](README-assets/wrong5.png)
+
+If they guess wrong six times they run out of lives and are told the game is over and asked if they want to carry on playing.
+
+![Ran out of guesses](README-assets/completely-wrong.png)
+
 ## Testing
 
 * I commented out the code that hid the word so I could see what the word was to make sure the correct response was recieved. If the letter was in the word the message said that it was and what the letter entered was and if the letter wasn't in the word the message said it wasn't and what the letter entered was.
