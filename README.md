@@ -127,6 +127,20 @@ No remaining bugs.
 
 The random library is used to select a random word from the words list.
 
+## Deployment to Heroku
+
+This project was deployed using Code Institue's mock terminal for Heroku.
+
+The steps of deployment are:
+
+  - Click "New".
+  - Then "Create new app".
+  - Then give the app a unique name, choose a region and click create app.
+  - Click "Settings" under "Config Vars" set Key to Port and Value to 8000
+  - Under buildbacks add Python and NodeJS in that order.
+  - Click the heading "Deploy" Link the Heroku app to the GitHub repository.
+  - Then click on the "Deploy" button.
+
 ## Credits
 
 * Help understanding and implementing Python came from the Code Institute course.
