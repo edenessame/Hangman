@@ -20,7 +20,7 @@ To understand how the logic of the game should work I created the following flow
 ### Welcome
 
 On start up the user is greeted with a welcome message, telling them what the game is and asking for their name:
-![Welcome](README-assets/Welcome.png)
+![Welcome](README-assets/start.png)
 
 ### Rules 
 
