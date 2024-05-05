@@ -125,7 +125,6 @@ def play_game():
         game_over = False
 
         word = generate_word()
-        print(word)
         hidden_word = "_ " * len(word)
         print(f"The word to guess is: {hidden_word}\n")
 
