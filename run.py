@@ -7,8 +7,8 @@ def get_name():
     Asks user for their name to display
     Tell them the rules of the game
     """
-    print("Welcome to Hangman!")
-    name = input("Hi! What's your name?\n")
+    print("Welcome to Hangman!\n")
+    name = input("Hello, welcome! What's your name?\n")
     print(f"\nHi! {name}! Let's play hangman!\n")
     print("How to play:\n")
     print("The word is hidden under underscores.")
