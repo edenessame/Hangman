@@ -33,6 +33,10 @@ To understand how the logic of the game should work I created the following flow
 * After each guess my display variable would save each iteration and append it next to the previous one and print the previous ones, rather than just the current guess, a member of the tutor team helped me realise that I needed to put the display variable inside the while loop so that it cleared each time and looked correct.
 * When passing through the Python linter I was getting the error message: 80: W605 invalid escape sequence '\ ' on [Stackoverflow](https://stackoverflow.com/questions/52335970/how-to-fix-syntaxwarning-invalid-escape-sequence-in-python) I found that I had to write it as \\ to get a literal \ and not an escape character.
 
+## Validator Testing
+**Validator Testing**
+  - PEP8 - No errors were returned from https://pep8ci.herokuapp.com/
+![python validator](README-assets/Python-linter.png)
 
 ## Credits
 
